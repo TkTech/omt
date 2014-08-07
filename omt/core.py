@@ -41,9 +41,14 @@ def process_to_screen(argv, stdin=None, width=80, height=24):
         rfds, wfds, xfds = select.select(read_fds, write_fds, [])
 
         if master_fd in rfds:
-            data = os.read(master_fd, 1024)
+            try:
+                data = os.read(master_fd, 1024)
+            except OSError:
+                # A weird, docker-only bug that causes the socket to close
+                # dirty.
+                break
+
             if not data:
-                read_fds.remove(master_fd)
                 break
 
             stream.feed(data)
