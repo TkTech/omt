@@ -1,0 +1,14 @@
+# Python cruft
+*.egg-info
+*.pyc
+
+# Sphinx cruft
+docs/_build/*
+
+# OS X cruft
+.DS_Store
+
+# ArmAII cruft
+*.pbo
+pbo_mission/*
+pbo_server/*

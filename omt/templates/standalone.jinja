@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+  <style>
+  body {
+    font-family: 'Ubuntu Mono';
+    font-size: 14px;
+    margin: 0;
+  }
+  {% for line in style %}
+  {{ line }}
+  {% endfor %}
+  </style>
+</head>
+<body class="omt-bg-bg">
+  {% include "screen.jinja" %}
+</body>
+</html>

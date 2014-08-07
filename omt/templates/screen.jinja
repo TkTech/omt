@@ -1,0 +1,24 @@
+<div class="omt-screen omt-bg-bg omt-fg-fg">
+{%- for line in screen -%}
+  <div class="omt-line">
+    {%- if not line -%}
+    <br/>
+    {%- else -%}
+      {% for char in line -%}
+        {%- if not char -%}
+        <span> </span>
+        {%- else -%}
+        <span class="omt
+          {%- if char.bold %} omt-bold{%- endif -%}
+          {%- if char.italics %} omt-italics{%- endif -%}
+          {%- if char.underline %} omt-underline{%- endif -%}
+          {%- if char.strikethrough %} omt-strikethrough{%- endif -%}
+          {%- if char.fg %} omt-{{ char.fg }}-fg{%- endif -%}
+          {%- if char.bg %} omt-{{ char.bg }}-bg{%- endif -%}
+        ">{{ char.data }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+{%- endfor -%}
+</div>
