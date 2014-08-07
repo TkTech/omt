@@ -18,6 +18,7 @@ setup(
     install_requires=[
         'docopt',
         'pyte',
-        'jinja2'
+        'jinja2',
+        'docker-py'
     ]
 )
