@@ -8,6 +8,14 @@
     font-size: 14px;
     margin: 0;
   }
+  .omt-screen {
+    /* Stop consecutive whitespace from collapsing. */
+    white-space: pre;
+    padding: 12px;
+  }
+  .omt-screen > .omt-line {
+    padding-bottom: 4px;
+  }
   {% for line in style %}
   {{ line }}
   {% endfor %}

@@ -35,7 +35,6 @@ def process_to_screen(argv, stdin=None, width=80, height=24):
 
     read_fds = [master_fd, stdin]
     write_fds = [master_fd] if stdin is not None else []
-
     while True:
         # Wait for output from the child process.
         rfds, wfds, xfds = select.select(read_fds, write_fds, [])
